@@ -27,6 +27,7 @@ def transaction_mail_send(user,subject,amount,template):
     send_mail=EmailMultiAlternatives(subject,'',to=[user.email])
     send_mail.attach_alternative(message,"text/html")
     send_mail.send()
+    
 
 
 class TransactionCreateMixin(LoginRequiredMixin, CreateView):
