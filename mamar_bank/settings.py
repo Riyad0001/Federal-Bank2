@@ -101,10 +101,11 @@ WSGI_APPLICATION = 'mamar_bank.wsgi.application'
 #    }
 # }
 DATABASES = {
-     'default': dj_database_url.config(
-         default=os.environ.get('postgresql://federal_bank_user:FDcE0Nf1gEK3ERgJ5StVoOrkINRhwyMA@dpg-cte51sdds78s739itclg-a.oregon-postgres.render.com/federal_bank')
-     )
- }
+    'default': dj_database_url.config(
+        default='postgresql://federal_bank_user:FDcE0Nf1gEK3ERgJ5StVoOrkINRhwyMA@dpg-cte51sdds78s739itclg-a.oregon-postgres.render.com/federal_bank'
+    )
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
