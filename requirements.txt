@@ -17,3 +17,4 @@ PyScreeze
 pytweening
 sqlparse
 tzdata
+dj-database-url
