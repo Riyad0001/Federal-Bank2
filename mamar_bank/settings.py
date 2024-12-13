@@ -32,7 +32,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://federal-bank2.onrender.com"]
 
 CSRF_TRUSTED_ORIGINS = ['https://federal-bank2.onrender.com']
 
