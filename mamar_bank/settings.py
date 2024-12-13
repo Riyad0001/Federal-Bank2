@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import environ
+import dj_database_url
 env = environ.Env()
 environ.Env.read_env()
 
@@ -87,17 +88,21 @@ WSGI_APPLICATION = 'mamar_bank.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'mamar_bank',
+#        'USER': 'postgres',
+#        'PASSWORD': 'admin',
+#        'HOST': 'localhost',
+#        'PORT': '5432',
+#    }
+# }
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'mamar_bank',
-       'USER': 'postgres',
-       'PASSWORD': 'admin',
-       'HOST': 'localhost',
-       'PORT': '5432',
-   }
-}
-
+     'default': dj_database_url.config(
+         default=os.environ.get('postgresql://federal_bank_user:FDcE0Nf1gEK3ERgJ5StVoOrkINRhwyMA@dpg-cte51sdds78s739itclg-a.oregon-postgres.render.com/federal_bank')
+     )
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
