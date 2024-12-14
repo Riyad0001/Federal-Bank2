@@ -32,7 +32,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://federal-bank2.onrender.com"]
+ALLOWED_HOSTS = ["*"]
 
 # CSRF_TRUSTED_ORIGINS = ['https://federal-bank2.onrender.com']
 CSRF_TRUSTED_ORIGINS = ['https:purple-field-production.up.railway.app']
@@ -110,7 +110,7 @@ WSGI_APPLICATION = 'mamar_bank.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv("postgresql://postgres:cuyxQcrvvWgNyMzpMtlCfLrJCwZPzZLG@postgres-5082.railway.internal:5432/railway")  # Fetch DATABASE_URL from environment variables
+        default=os.getenv("postgresql://postgres:UvdEWOoEeUADzwuQYqrLPNcifdiqAkzv@postgres.railway.internal:5432/railway")  # Fetch DATABASE_URL from environment variables
     )
 }
 
