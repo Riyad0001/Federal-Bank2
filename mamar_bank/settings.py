@@ -34,7 +34,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["https://federal-bank2.onrender.com"]
 
-CSRF_TRUSTED_ORIGINS = ['https://federal-bank2.onrender.com']
+# CSRF_TRUSTED_ORIGINS = ['https://federal-bank2.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https:purple-field-production.up.railway.app']
 
 # Application definition
 
@@ -101,9 +102,15 @@ WSGI_APPLICATION = 'mamar_bank.wsgi.application'
 #        'PORT': '5432',
 #    }
 # }
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgresql://federal_bank_user:FDcE0Nf1gEK3ERgJ5StVoOrkINRhwyMA@dpg-cte51sdds78s739itclg-a.oregon-postgres.render.com/federal_bank'
+#     )
+# }
+
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://federal_bank_user:FDcE0Nf1gEK3ERgJ5StVoOrkINRhwyMA@dpg-cte51sdds78s739itclg-a.oregon-postgres.render.com/federal_bank'
+        default=os.getenv("postgresql://postgres:cuyxQcrvvWgNyMzpMtlCfLrJCwZPzZLG@postgres-5082.railway.internal:5432/railway")  # Fetch DATABASE_URL from environment variables
     )
 }
 
@@ -172,3 +179,6 @@ EMAIL_USE_SSL = False
 EMAIL_PORT = 587
 EMAIL_HOST_USER = env("EMAIL_HOST_USERs")
 EMAIL_HOST_PASSWORD = env("EMAIL_PASSWORD")
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
